@@ -36,8 +36,8 @@ function sharprun(basename, file) {
     // const i_sizes = [1600];
     const ratios = [[16,9], [22,9], [1,1]];
 
-    // const strategy = ["attention", "entropy"];
-    const strategy = ["attention"]; // Attention is better in majority
+    const strategy = ["attention", "entropy"];
+    // const strategy = ["attention"]; // Attention is better in majority
     let i = 1;
     let j = 1;
 
@@ -58,7 +58,7 @@ function sharprun(basename, file) {
                 .clone()
                 .resize({ width: img_size })
                 .jpeg({quality: jpeg_quality})
-                .toFile(`${dir_out}jpg/${basename}-${img_num}.jpg`)
+                .toFile(`${dir_out}${basename}-${img_num}.jpg`)
         );
 
         // WEBP output
@@ -68,7 +68,7 @@ function sharprun(basename, file) {
                 .clone()
                 .resize({ width: img_size })
                 .webp({quality: webp_quality})
-                .toFile(`${dir_out}webp/${basename}-${img_num}.webp`)
+                .toFile(`${dir_out}${basename}-${img_num}.webp`)
         );
 
         i++;
@@ -117,7 +117,7 @@ function sharprun(basename, file) {
                             // position: sharp.strategy.entropy
                         })
                         .jpeg({quality: jpeg_quality})
-                        .toFile(`${dir_out}jpg/${basename}-${img_num}@${r1}_${r2}${strategyLabel}.jpg`)
+                        .toFile(`${dir_out}${basename}-${img_num}@${r1}_${r2}${strategyLabel}.jpg`)
                 );
 
                 // WEBP output
@@ -133,12 +133,12 @@ function sharprun(basename, file) {
                             // position: sharp.strategy.entropy
                         })
                         .webp({quality: webp_quality})
-                        .toFile(`${dir_out}webp/${basename}-${img_num}@${r1}_${r2}${strategyLabel}.webp`)
+                        .toFile(`${dir_out}${basename}-${img_num}@${r1}_${r2}${strategyLabel}.webp`)
                 );
             });
 
-            j++;
         });
+        j++;
     });
 
     // const i_qualities = [100,70,65,60,55,50,45,40,35,30,5,1];
@@ -149,7 +149,7 @@ function sharprun(basename, file) {
     //             .clone()
     //             .resize({ width: img_size })
     //             .webp({//                 quality: img_q//             })
-    //             .toFile(`${dir_out}webp/${basename}@${img_q}.webp`)
+    //             .toFile(`${dir_out}${basename}@${img_q}.webp`)
     //     );
     // });
 
@@ -182,8 +182,8 @@ function sharpify() {
     // Wait for folders to be made
     // https://github.com/lovell/sharp/issues/1052#issuecomment-349401421
     (async () => {
-        await mkdirp(`${dir_out}webp/`);
-        await mkdirp(`${dir_out}jpg/`);
+        await mkdirp(`${dir_out}`);
+        await mkdirp(`${dir_out}`);
       
         theImages();
       })();
