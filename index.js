@@ -6,6 +6,16 @@ const mkdirp = require('mkdirp')
 // const fsPromises = fs.promises;
 // https://stackoverflow.com/questions/40593875/using-filesystem-in-node-js-with-async-await#answer-47190904
 
+// https://github.com/lovell/sharp/issues/185#issuecomment-87466839
+// sharp(input)
+//   .resize( ... )
+//   .toBuffer()
+//   .then(function(data) {
+//     return writeFileAsync(output, data, {mode: ... , flag: ... });
+//   })
+//   .then( ... )
+
+
 const sharp = require("sharp");
 const fs = require("fs");
 const path = require("path");
@@ -36,43 +46,43 @@ function sharprun(basename, file) {
     // const i_sizes = [1600];
     const ratios = [[16,9], [22,9], [1,1]];
 
-    const strategy = ["attention", "entropy"];
-    // const strategy = ["attention"]; // Attention is better in majority
+    // const strategy = ["attention", "entropy"];
+    const strategy = ["attention"]; // Attention is better in majority
     let i = 1;
     let j = 1;
 
     // RECTANGULAR
-    i_sizes.forEach(img_size => {
-        const jpeg_quality = (img_size > 1600) ? 60 : (img_size > 1000) ? 65 : 70;
-        const webp_quality = (img_size > 1600) ? 55 : (img_size > 1000) ? 60 : 65;
-        // console.info(`Outputting rectangle size: ${i}`);
+    // i_sizes.forEach(img_size => {
+    //     const jpeg_quality = (img_size > 1600) ? 60 : (img_size > 1000) ? 65 : 70;
+    //     const webp_quality = (img_size > 1600) ? 55 : (img_size > 1000) ? 60 : 65;
+    //     // console.info(`Outputting rectangle size: ${i}`);
 
-        // sample-15-07.jpg >> {sample-15}-{07}.jpg {filename}-{img_num}.ext
-        // sample-15-07@22_9.jpg >> {sample-15}-{07}@{22_9}.jpg {filename}-{img_num}@{img_ratio}.ext
-        let img_num = i.toString().padStart(2, '0');
+    //     // sample-15-07.jpg >> {sample-15}-{07}.jpg {filename}-{img_num}.ext
+    //     // sample-15-07@22_9.jpg >> {sample-15}-{07}@{22_9}.jpg {filename}-{img_num}@{img_ratio}.ext
+    //     let img_num = i.toString().padStart(2, '0');
 
-        // JPEG output
-        promises.push(
-            sharpStream
-                .setMaxListeners(0)
-                .clone()
-                .resize({ width: img_size })
-                .jpeg({quality: jpeg_quality})
-                .toFile(`${dir_out}${basename}-${img_num}.jpg`)
-        );
+    //     // JPEG output
+    //     promises.push(
+    //         sharpStream
+    //             .setMaxListeners(0)
+    //             .clone()
+    //             .resize({ width: img_size })
+    //             .jpeg({quality: jpeg_quality})
+    //             .toFile(`${dir_out}${basename}-${img_num}.jpg`)
+    //     );
 
-        // WEBP output
-        promises.push(
-            sharpStream
-                .setMaxListeners(0)
-                .clone()
-                .resize({ width: img_size })
-                .webp({quality: webp_quality})
-                .toFile(`${dir_out}${basename}-${img_num}.webp`)
-        );
+    //     // WEBP output
+    //     promises.push(
+    //         sharpStream
+    //             .setMaxListeners(0)
+    //             .clone()
+    //             .resize({ width: img_size })
+    //             .webp({quality: webp_quality})
+    //             .toFile(`${dir_out}${basename}-${img_num}.webp`)
+    //     );
 
-        i++;
-    });
+    //     i++;
+    // });
 
     // RATIO CROPS
     i_sizes.forEach(img_size => {
