@@ -37,47 +37,140 @@ Each input image will generate:
 
 size = 01 (smallest @ 100px) to 10 (largest @ 2000px)
 
-- input-01.jpg
-- input-01@16_9.jpg
-- input-01@1_1.jpg
-- input-01@22_9.jpg
-- input-02.jpg
-- input-02@16_9.jpg
-- input-02@1_1.jpg
-- input-02@22_9.jpg
-- input-03.jpg
-- input-03@16_9.jpg
-- input-03@1_1.jpg
-- input-03@22_9.jpg
-- input-04.jpg
-- input-04@16_9.jpg
-- input-04@1_1.jpg
-- input-04@22_9.jpg
-- input-05.jpg
-- input-05@16_9.jpg
-- input-05@1_1.jpg
-- input-05@22_9.jpg
-- input-06.jpg
-- input-06@16_9.jpg
-- input-06@1_1.jpg
-- input-06@22_9.jpg
-- input-07.jpg
-- input-07@16_9.jpg
-- input-07@1_1.jpg
-- input-07@22_9.jpg
-- input-08.jpg
-- input-08@16_9.jpg
-- input-08@1_1.jpg
-- input-08@22_9.jpg
-- input-09.jpg
-- input-09@16_9.jpg
-- input-09@1_1.jpg
-- input-09@22_9.jpg
-- input-10.jpg
-- input-10@16_9.jpg
-- input-10@1_1.jpg
-- input-10@22_9.jpg
-- [and all the above, in `*.webp`]
+```bash
+input-01.jpg
+input-01@1_1.jpg
+input-01@1_1-c.jpg
+input-01@1_1-e.jpg
+input-01@16_9.jpg
+input-01@16_9-c.jpg
+input-01@16_9-e.jpg
+input-01@22_9.jpg
+input-01@22_9-c.jpg
+input-01@22_9-e.jpg
+input-01@4_6.jpg
+input-01@4_6-c.jpg
+input-01@4_6-e.jpg
+input-02.jpg
+input-02@1_1.jpg
+input-02@1_1-c.jpg
+input-02@1_1-e.jpg
+input-02@16_9.jpg
+input-02@16_9-c.jpg
+input-02@16_9-e.jpg
+input-02@22_9.jpg
+input-02@22_9-c.jpg
+input-02@22_9-e.jpg
+input-02@4_6.jpg
+input-02@4_6-c.jpg
+input-02@4_6-e.jpg
+input-03.jpg
+input-03@1_1.jpg
+input-03@1_1-c.jpg
+input-03@1_1-e.jpg
+input-03@16_9.jpg
+input-03@16_9-c.jpg
+input-03@16_9-e.jpg
+input-03@22_9.jpg
+input-03@22_9-c.jpg
+input-03@22_9-e.jpg
+input-03@4_6.jpg
+input-03@4_6-c.jpg
+input-03@4_6-e.jpg
+input-04.jpg
+input-04@1_1.jpg
+input-04@1_1-c.jpg
+input-04@1_1-e.jpg
+input-04@16_9.jpg
+input-04@16_9-c.jpg
+input-04@16_9-e.jpg
+input-04@22_9.jpg
+input-04@22_9-c.jpg
+input-04@22_9-e.jpg
+input-04@4_6.jpg
+input-04@4_6-c.jpg
+input-04@4_6-e.jpg
+input-05.jpg
+input-05@1_1.jpg
+input-05@1_1-c.jpg
+input-05@1_1-e.jpg
+input-05@16_9.jpg
+input-05@16_9-c.jpg
+input-05@16_9-e.jpg
+input-05@22_9.jpg
+input-05@22_9-c.jpg
+input-05@22_9-e.jpg
+input-05@4_6.jpg
+input-05@4_6-c.jpg
+input-05@4_6-e.jpg
+input-06.jpg
+input-06@1_1.jpg
+input-06@1_1-c.jpg
+input-06@1_1-e.jpg
+input-06@16_9.jpg
+input-06@16_9-c.jpg
+input-06@16_9-e.jpg
+input-06@22_9.jpg
+input-06@22_9-c.jpg
+input-06@22_9-e.jpg
+input-06@4_6.jpg
+input-06@4_6-c.jpg
+input-06@4_6-e.jpg
+input-07.jpg
+input-07@1_1.jpg
+input-07@1_1-c.jpg
+input-07@1_1-e.jpg
+input-07@16_9.jpg
+input-07@16_9-c.jpg
+input-07@16_9-e.jpg
+input-07@22_9.jpg
+input-07@22_9-c.jpg
+input-07@22_9-e.jpg
+input-07@4_6.jpg
+input-07@4_6-c.jpg
+input-07@4_6-e.jpg
+input-08.jpg
+input-08@1_1.jpg
+input-08@1_1-c.jpg
+input-08@1_1-e.jpg
+input-08@16_9.jpg
+input-08@16_9-c.jpg
+input-08@16_9-e.jpg
+input-08@22_9.jpg
+input-08@22_9-c.jpg
+input-08@22_9-e.jpg
+input-08@4_6.jpg
+input-08@4_6-c.jpg
+input-08@4_6-e.jpg
+input-09.jpg
+input-09@1_1.jpg
+input-09@1_1-c.jpg
+input-09@1_1-e.jpg
+input-09@16_9.jpg
+input-09@16_9-c.jpg
+input-09@16_9-e.jpg
+input-09@22_9.jpg
+input-09@22_9-c.jpg
+input-09@22_9-e.jpg
+input-09@4_6.jpg
+input-09@4_6-c.jpg
+input-09@4_6-e.jpg
+input-10.jpg
+input-10@1_1.jpg
+input-10@1_1-c.jpg
+input-10@1_1-e.jpg
+input-10@16_9.jpg
+input-10@16_9-c.jpg
+input-10@16_9-e.jpg
+input-10@22_9.jpg
+input-10@22_9-c.jpg
+input-10@22_9-e.jpg
+input-10@4_6.jpg
+input-10@4_6-c.jpg
+input-10@4_6-e.jpg
+```
+
+and all the above, in `*.webp`
 
 ## AVIF
 
